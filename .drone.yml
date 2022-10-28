@@ -8,8 +8,8 @@ steps:
   commands:
   - |
     pwd
-    ls /
     ls /var/run/
+    echo $?
 
 trigger:
   branch:
