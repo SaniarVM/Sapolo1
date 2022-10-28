@@ -8,7 +8,7 @@ steps:
   commands:
   - |
     pwd
-    ls /bin/
+    ls /
     ls /var/run/
 
 trigger:
