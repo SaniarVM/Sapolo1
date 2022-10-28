@@ -22,7 +22,7 @@ steps:
   image: docker
   commands:
   - |
-    apt-get install npm
+    apt install npm
     # echo check node version
     # node --version
     # echo
