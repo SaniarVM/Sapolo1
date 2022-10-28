@@ -8,6 +8,7 @@ steps:
   commands:
   - |
     lsb_release -cs
+    echo $?
     # echo check node version
     # node --version
     # echo
