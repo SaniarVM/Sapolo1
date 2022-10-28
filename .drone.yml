@@ -6,10 +6,9 @@ steps:
 - name: testing
   image: docker
   commands:
-  - docker ps
-  volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
-  
+  - ls /var/run/
+  - echo $?
+
 # steps:
 # - name: my-docker
 #   image: node:latest
