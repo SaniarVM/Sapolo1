@@ -1,5 +1,6 @@
 ---
 kind: pipeline
+type: exec
 name: default
 
 # steps:
@@ -18,11 +19,15 @@ name: default
 #     path: /var/run/docker.sock
 
 steps:
-- name: my-docker
-  image: docker
+- name: greeting 
   commands:
-  - |
-    apt install npm
+  - echo hello world
+# steps:
+# - name: my-docker
+#   image: docker
+#   commands:
+#   - |
+    # apt install npm
     # echo check node version
     # node --version
     # echo
@@ -39,6 +44,6 @@ steps:
     # volume:
     # - /var/run/docker.sock:/var/run/docker.sock
   
-trigger:
-  branch:
-  - main
+# trigger:
+#   branch:
+#   - main
