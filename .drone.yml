@@ -1,13 +1,20 @@
+---
 kind: pipeline
-type: docker
 name: default
 
 steps:
-- name: testing
-  image: docker
+- name: test
+  image: docker:dind
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
   commands:
-  - ls /var/run/
-  - echo $?
+  - docker ps -a
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
 
 # steps:
 # - name: my-docker
