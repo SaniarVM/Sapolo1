@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: my-docker
-  image: node:latest
+  image: ubuntu
   commands:
   - |
     echo check node version
