@@ -36,10 +36,9 @@ steps:
     # ls /var/run
     # echo $?
     # docker ps
-#   volume:
-#     - /var/run/docker.sock:/var/run/docker.sock
-    
-
+    # volume:
+    # - /var/run/docker.sock:/var/run/docker.sock
+  
 trigger:
   branch:
   - main
