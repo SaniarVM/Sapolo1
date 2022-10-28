@@ -1,40 +1,41 @@
----
-kind: pipeline
-name: default
-
-steps:
-- name: test
-  image: docker:dind
-  volumes:
-  - name: dockersock
-    path: /var/run/docker.sock
-  commands:
-  - docker ps -a
-  privileged: true
-
-volumes:
-- name: dockersock
-  host:
-    path: /var/run/docker.sock
+# ---
+# kind: pipeline
+# name: default
 
 # steps:
-# - name: my-docker
-#   image: node:latest
+# - name: test
+#   image: docker:dind
+#   volumes:
+#   - name: dockersock
+#     path: /var/run/docker.sock
 #   commands:
-#   - |
-#     echo check node version
-#     node --version
-#     echo
-#     echo install docker 
-#     chmod +x docker-install.sh
-#     ./docker-install.sh
-#     echo
-#     echo check docker version
-#     docker --version
-#     pwd
-#     ls /var/run
-#     echo $?
-#     docker ps
+#   - docker ps -a
+#   privileged: true
+
+# volumes:
+# - name: dockersock
+#   host:
+#     path: /var/run/docker.sock
+
+steps:
+- name: my-docker
+  image: docker
+  commands:
+  - |
+    apt-get install npm
+    # echo check node version
+    # node --version
+    # echo
+    # echo install docker 
+    # chmod +x docker-install.sh
+    # ./docker-install.sh
+    # echo
+    # echo check docker version
+    # docker --version
+    # pwd
+    # ls /var/run
+    # echo $?
+    # docker ps
 #   volume:
 #     - /var/run/docker.sock:/var/run/docker.sock
     
