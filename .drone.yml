@@ -3,10 +3,13 @@ type: docker
 name: default
 
 steps:
-- name: hello
-  image: busybox
+- name: my-docker
+  image: docker
   commands:
-  - echo hello world
+  - |
+    ls
+    ls /var/run/
+
  
 trigger:
   branch:
