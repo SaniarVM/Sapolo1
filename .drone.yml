@@ -10,6 +10,7 @@ steps:
     pwd
     ls /var/run
     echo $?
+    docker ps
 
 trigger:
   branch:
