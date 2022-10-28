@@ -4,11 +4,18 @@ name: default
 
 steps:
 - name: my-docker
-  image: node
+  image: node:latest
   commands:
   - |
+    echo check node version
+    node --version
+    echo
+    echo install docker 
     chmod +x docker-install.sh
     ./docker-install.sh
+    echo
+    echo check docker version
+    docker --version
     pwd
     ls /var/run
     echo $?
