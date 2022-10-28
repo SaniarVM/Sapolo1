@@ -7,19 +7,21 @@ steps:
   image: ubuntu
   commands:
   - |
+    lsb_release -cs
     # echo check node version
     # node --version
     # echo
-    echo install docker 
-    chmod +x docker-install.sh
-    ./docker-install.sh
-    echo
-    echo check docker version
-    docker --version
-    pwd
-    ls /var/run
-    echo $?
-    docker ps
+
+    # echo install docker 
+    # chmod +x docker-install.sh
+    # ./docker-install.sh
+    # echo
+    # echo check docker version
+    # docker --version
+    # pwd
+    # ls /var/run
+    # echo $?
+    # docker ps
 
 trigger:
   branch:
