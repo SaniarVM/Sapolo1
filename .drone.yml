@@ -1,28 +1,36 @@
----
 kind: pipeline
 type: docker
 name: default
 
 steps:
-- name: my-docker
-  image: ubuntu
+- name: testing
+  image: docker
   commands:
-  - |
-    lsb_release -cs
-    # echo check node version
-    # node --version
-    # echo
-
-    # echo install docker 
-    # chmod +x docker-install.sh
-    # ./docker-install.sh
-    # echo
-    # echo check docker version
-    # docker --version
-    # pwd
-    # ls /var/run
-    # echo $?
-    # docker ps
+  - docker ps
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
+  
+# steps:
+# - name: my-docker
+#   image: node:latest
+#   commands:
+#   - |
+#     echo check node version
+#     node --version
+#     echo
+#     echo install docker 
+#     chmod +x docker-install.sh
+#     ./docker-install.sh
+#     echo
+#     echo check docker version
+#     docker --version
+#     pwd
+#     ls /var/run
+#     echo $?
+#     docker ps
+#   volume:
+#     - /var/run/docker.sock:/var/run/docker.sock
+    
 
 trigger:
   branch:
