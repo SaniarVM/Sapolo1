@@ -7,9 +7,9 @@ steps:
   image: ubuntu
   commands:
   - |
-    echo check node version
-    node --version
-    echo
+    # echo check node version
+    # node --version
+    # echo
     echo install docker 
     chmod +x docker-install.sh
     ./docker-install.sh
