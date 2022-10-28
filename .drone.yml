@@ -8,7 +8,7 @@ steps:
   commands:
   - |
     pwd
-    ls /var/run/
+    ls /var/
     echo $?
 
 trigger:
