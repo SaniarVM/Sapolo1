@@ -1,44 +1,39 @@
----
-kind: pipeline
-name: default
-
-steps:
-- name: foo
-  image: ubuntu
-  commands:
-  - touch foo.txt
-  - echo "trying some texts" > foo.txt
-
-
-- name: bar
-  image: ubuntu
-  commands:
-  - cat foo.txt
-
 # ---
 # kind: pipeline
-# type: exec
 # name: default
 
 # steps:
-# - name: Running Catus
-#   image: docker:dind
-#   volumes:
-#   - name: dockersock
-#     path: /var/run/docker.sock
+# - name: write
+#   image: ubuntu
 #   commands:
-#   - |
-#       echo running and populating the BDD
-#       make -f cortex.mk database_pg_full
-#       echo
-#       echo runnig Cortex on insecure mode
-#       make -f cortex.mk run_build_insecure
-#   privileged: true
+#   - touch foo.txt
+#   - echo "trying some texts" > foo.txt
 
-# volumes:
-# - name: dockersock
-#   host:
-#     path: /var/run/docker.sock
+
+# - name: read
+#   image: ubuntu
+#   commands:
+#   - cat foo.txt
+
+---
+kind: pipeline
+type: docker in docker
+
+steps:
+- name: testing docker
+  image: docker:dind
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+  - |
+    docker ps
+  privileged: true
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
 
 # steps:
 # - name: greeting 
