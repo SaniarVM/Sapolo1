@@ -1,20 +1,3 @@
-# ---
-# kind: pipeline
-# name: default
-
-# steps:
-# - name: write
-#   image: ubuntu
-#   commands:
-#   - touch foo.txt
-#   - echo "trying some texts" > foo.txt
-
-
-# - name: read
-#   image: ubuntu
-#   commands:
-#   - cat foo.txt
-
 ---
 kind: pipeline
 name: default
@@ -32,6 +15,23 @@ volumes:
 - name: dockersock
   host:
     path: /var/run/docker.sock
+
+# ---
+# kind: pipeline
+# name: default
+
+# steps:
+# - name: write
+#   image: ubuntu
+#   commands:
+#   - touch foo.txt
+#   - echo "trying some texts" > foo.txt
+
+
+# - name: read
+#   image: ubuntu
+#   commands:
+#   - cat foo.txt
 
 # steps:
 # - name: greeting 
