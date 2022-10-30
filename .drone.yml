@@ -6,7 +6,7 @@ steps:
   image: node
   commands:
   - npm install
-  - npm test
+  - node_modules/.bin/jest --verbose
 
 # ---
 # kind: pipeline

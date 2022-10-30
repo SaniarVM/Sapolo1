@@ -10,4 +10,4 @@ const mathOperations = {
         return a * b
     }
 }
-export default mathOperations
+module.exports = mathOperations
