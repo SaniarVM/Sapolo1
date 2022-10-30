@@ -1,20 +1,34 @@
----
 kind: pipeline
 name: default
 
+platform:
+  os: linux
+  arch: arm64
+
 steps:
 - name: test
-  image: docker
-  volumes:
-  - name: dockersock
-    path: /var/run/docker.sock
+  image: node
   commands:
-  - docker ps -a
+  - npm install
+  - npm test
 
-volumes:
-- name: dockersock
-  host:
-    path: /var/run/docker.sock
+# ---
+# kind: pipeline
+# name: default
+
+# steps:
+# - name: test
+#   image: docker
+#   volumes:
+#   - name: dockersock
+#     path: /var/run/docker.sock
+#   commands:
+#   - docker ps -a
+
+# volumes:
+# - name: dockersock
+#   host:
+#     path: /var/run/docker.sock
 
 # ---
 # kind: pipeline

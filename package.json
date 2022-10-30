@@ -1,0 +1,23 @@
+{
+  "name": "sapolo1",
+  "version": "1.0.0",
+  "description": "Initiation project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaniarVM/Sapolo1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaniarVM/Sapolo1/issues"
+  },
+  "homepage": "https://github.com/SaniarVM/Sapolo1#readme",
+  "devDependencies": {
+    "jest": "^29.2.2"
+  }
+}
