@@ -1,4 +1,4 @@
-const mathOperations = require('./index.jsw');
+const mathOperations = require('./index.js');
 
 describe("Calculator tests", () => {
     test('adding 2 + 4 should return 6', () => {
