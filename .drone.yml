@@ -12,7 +12,7 @@ steps:
   - echo checking interpreter
   - echo $0
   - echo checking sh commands
-  - ls /bin/sh
+  - ls "$(dirname "$0")"
 
 volumes:
 - name: unixsocket
