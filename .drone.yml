@@ -4,9 +4,18 @@ name: default
 steps:
 - name: test
   image: node
+  volumes:
+  - name: cache
+    host:
+      path: /var/lib/cache
   commands:
   - npm install
   - npm test
+
+volumes:
+- name: cache
+  host:
+    path: /var/lib/cache
 
 # ---
 # kind: pipeline
