@@ -2,10 +2,6 @@
 kind: pipeline
 name: Front end auto test
 
-trigger:
-  event:
-  - push
-
 steps:
 - name: jest_test
   image: docker 
@@ -22,7 +18,10 @@ volumes:
 - name: node_cache
   host:
     path: /tmp/cache/drone/node_modules
-    
+
+trigger:
+  event:
+  - push
 # ---
 # kind: pipeline
 # name: default
