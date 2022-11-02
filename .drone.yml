@@ -4,21 +4,18 @@ name: Front end auto test
 
 steps:
 - name: jest test
-  image: node
+  image: docker 
   volumes:
-  - name: node_cache
-    path: /drone/src/services/client/node_modules
+  - name: unixsocket
+    path: /var/run/docker.socket
   commands:
-  - echo listing
-  - ls /drone/src/services/client/
-  - ls /drone/src/services/client/node_modules
-  - npm install
-  - npm test
+  - echo checking interpreter
+  - echo $0
 
 volumes:
-- name: node_cache
+- name: unixsocket
   host:
-    path: /tmp/cache/drone/node_modules
+    path: /var/run/docker.socket
 
 # ---
 # kind: pipeline
