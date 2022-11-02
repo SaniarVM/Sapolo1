@@ -5,11 +5,11 @@ name: Front end auto test
 trigger:
   event:
   - push
-  
+
 steps:
 - name: jest test
   image: docker 
- volumes:
+  volumes:
   - name: node_cache
     path: /drone/src/services/client/node_modules
   commands:
