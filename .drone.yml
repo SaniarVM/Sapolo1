@@ -4,17 +4,17 @@ name: default
 steps:
 - name: jest test
   image: node
-  volumes:
-  - name: node_cache
-    path: /drone/src/services/client/node_modules
+  # volumes:
+  # - name: node_cache
+  #   path: /drone/src/services/client/node_modules
   commands:
   - npm install
   - npm test
 
-volumes:
-- name: node_cache
-  host:
-    path: /tmp/cache/drone/node_modules
+# volumes:
+# - name: node_cache
+#   host:
+#     path: /tmp/cache/drone/node_modules
 
 # ---
 # kind: pipeline
