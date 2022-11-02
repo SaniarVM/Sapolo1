@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-- name: test
+- name: jest test
   image: node
   volumes:
   - name: node_cache
