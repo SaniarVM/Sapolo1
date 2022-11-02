@@ -2,6 +2,10 @@
 kind: pipeline
 name: Front end auto test
 
+trigger:
+  event:
+  - push
+  
 steps:
 - name: jest test
   image: docker 
