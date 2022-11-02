@@ -1,6 +1,6 @@
 kind: pipeline
-kind: docker
-name: default
+type: docker
+name: Front end auto test
 
 steps:
 - name: jest test
