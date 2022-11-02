@@ -22,6 +22,7 @@ volumes:
 trigger:
   event:
   - push
+  - pull_request
 # ---
 # kind: pipeline
 # name: default
