@@ -1,13 +1,16 @@
 kind: pipeline
+type: vm
 name: default
 
+pool:
+  use: ubuntu
+
 steps:
-- name: test
+- name: build
   image: node
   volumes:
   - name: cache
-    host:
-      path: /var/lib/cache
+    path: /tmp/cache
   commands:
   - npm install
   - npm test
