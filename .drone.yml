@@ -5,9 +5,9 @@ name: Front end auto test
 steps:
 - name: jest test
   image: docker 
-  volumes:
-  - name: unixsocket
-    path: /var/run/docker.socket
+ volumes:
+  - name: node_cache
+    path: /drone/src/services/client/node_modules
   commands:
   - echo checking interpreter
   - echo $0
@@ -15,9 +15,9 @@ steps:
   - ls "$(dirname "$0")"
 
 volumes:
-- name: unixsocket
+- name: node_cache
   host:
-    path: /var/run/docker.socket
+    path: /tmp/cache/drone/node_modules
 # ---
 # kind: pipeline
 # name: default
