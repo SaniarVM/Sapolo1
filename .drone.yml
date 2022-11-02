@@ -1,4 +1,5 @@
 kind: pipeline
+kind: docker
 name: default
 
 steps:
