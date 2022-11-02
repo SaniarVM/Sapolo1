@@ -11,6 +11,8 @@ steps:
   commands:
   - echo checking interpreter
   - echo $0
+  - echo checking sh commands
+  - ls /bin/sh
 
 volumes:
 - name: unixsocket
