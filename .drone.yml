@@ -22,6 +22,7 @@ volumes:
 - name: node_cache
   host:
     path: /tmp/cache/drone/node_modules
+    
 # ---
 # kind: pipeline
 # name: default
