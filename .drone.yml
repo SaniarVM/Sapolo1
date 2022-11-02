@@ -8,7 +8,8 @@ steps:
   - name: node_cache
     path: /drone/src/services/client/node_modules
   commands:
-  - ls /drone/src/services/client/node_modules/
+  - ls /drone/src/services/client/
+  - ls /drone/src/services/client/node_modules
   - npm install
   - npm test
 
