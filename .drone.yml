@@ -1,24 +1,20 @@
 kind: pipeline
-type: vm
 name: default
 
-pool:
-  use: ubuntu
-
 steps:
-- name: build
+- name: test
   image: node
   volumes:
-  - name: cache
-    path: /tmp/cache
+  - name: node_cache
+    path: /drone/src/services/client/node_modules
   commands:
   - npm install
   - npm test
 
 volumes:
-- name: cache
+- name: node_cache
   host:
-    path: /var/lib/cache
+    path: /tmp/cache/drone/node_modules
 
 # ---
 # kind: pipeline
