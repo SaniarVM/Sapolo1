@@ -9,6 +9,7 @@ steps:
   - name: node_cache
     path: /drone/src/services/client/node_modules
   commands:
+  - ls -la
   - echo checking interpreter
   - echo $0
   - echo checking sh commands
