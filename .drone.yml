@@ -6,16 +6,21 @@ steps:
 - name: jest_test
   image: docker 
   volumes:
+  - name: unixsocket
+    path: /var/run/docker.socket
   - name: node_cache
     path: /drone/src/services/client/node_modules
   commands:
+  - pwd
   - ls -la
-  - echo checking interpreter
-  - echo $0
+  - docker ps -a
   - echo checking sh commands
   - ls "$(dirname "$0")"
 
 volumes:
+- name: unixsocket
+  host:
+    path: /var/run/docker.socket
 - name: node_cache
   host:
     path: /tmp/cache/drone/node_modules
