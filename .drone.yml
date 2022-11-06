@@ -12,7 +12,7 @@ steps:
     path: /drone/src/services/client/node_modules
   commands:
   - pwd
-  - ls -la
+  - ls -la 
   - docker ps -a
   - echo checking sh commands
   - ls "$(dirname "$0")"
