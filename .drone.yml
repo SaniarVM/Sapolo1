@@ -1,0 +1,94 @@
+---
+kind: pipeline
+name: Front end auto test
+
+steps:
+- name: jest_test
+  image: docker 
+  volumes:
+  - name: unixsocket
+    path: /var/run/docker.socket
+  - name: node_cache
+    path: /drone/src/services/client/node_modules
+  commands:
+  - pwd
+  - ls -la 
+  - docker ps -a
+  - echo checking sh commands
+  - ls "$(dirname "$0")"
+
+volumes:
+- name: unixsocket
+  path: /var/run/docker.socket
+- name: node_cache
+  host:
+    path: /tmp/cache/drone/node_modules
+
+trigger:
+  event:
+  - push
+  - pull_request
+# ---
+# kind: pipeline
+# name: default
+
+# steps:
+# - name: test
+#   image: docker
+#   volumes:
+#   - name: dockersock
+#     path: /var/run/docker.sock
+#   commands:
+#   - docker ps -a
+
+# volumes:
+# - name: dockersock
+#   host:
+#     path: /var/run/docker.sock
+
+# ---
+# kind: pipeline
+# name: default
+
+# steps:
+# - name: write
+#   image: ubuntu
+#   commands:
+#   - touch foo.txt
+#   - echo "trying some texts" > foo.txt
+
+
+# - name: read
+#   image: ubuntu
+#   commands:
+#   - cat foo.txt
+
+# steps:
+# - name: greeting 
+#   commands:
+#   - echo hello world
+# steps:
+# - name: my-docker
+#   image: docker
+#   commands:
+#   - |
+    # apt install npm
+    # echo check node version
+    # node --version
+    # echo
+    # echo install docker 
+    # chmod +x docker-install.sh
+    # ./docker-install.sh
+    # echo
+    # echo check docker version
+    # docker --version
+    # pwd
+    # ls /var/run
+    # echo $?
+    # docker ps
+    # volume:
+    # - /var/run/docker.sock:/var/run/docker.sock
+  
+# trigger:
+#   branch:
+#   - main
